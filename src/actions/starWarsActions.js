@@ -19,7 +19,7 @@ export const fetchStarWarsFailure = (error) => ({
 export const fetchStarWarsData = ({ type, name }) => async (dispatch) => {
   dispatch(fetchStarWarsRequest());
   try {
-    const response = await fetch(`http://localhost:8080/api/v1/starwars?type=${type}&name=${name}`);
+    const response = await fetch(`http://localhost:9092/api/v1/starwars?type=${type}&name=${name}`);
     const data = await response.json();
     dispatch(fetchStarWarsSuccess(data));
   } catch (error) {
